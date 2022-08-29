@@ -1,0 +1,365 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
+$bdb_1: #263185;
+$bdb_2: #2b70c9;
+$bdb_3: #09b1fd;
+$bdb_4: #6e6e73;
+$bdb_5: #a1a1a6;
+$bdb_6: #4b4b4b;
+$bdb_7: #fafafa;
+$bdb_7: #020b16;
+
+/* Color Theme Swatches in Hex */
+$GrayScale-1: #222222;
+$GrayScale-2: #656565;
+$GrayScale-3: #ababab;
+$GrayScale-4: #eaeaea;
+$GrayScale-5: #f5f5f5;
+
+/* Color negativo y positivo */
+$kuler-White: #ffffff;
+$Kuler-Black: #000000;
+
+/* font size */
+$px: 12;
+$h1: unquote((48 / $px)+"rem");
+$h2: unquote((36 / $px)+"rem");
+$h3: unquote((24 / $px)+"rem");
+$h4: unquote((18 / $px)+"rem");
+$h5: unquote((16 / $px)+"rem");
+$h6: unquote((14 / $px)+"rem");
+$p: unquote((12 / $px)+"rem");
+$pm: unquote((10 / $px)+"rem");
+$ps: unquote((9 / $px)+"rem");
+
+$Roboto: "Roboto", sans-serif;
+
+/*variables*/
+$breakpoint-xs: 575.98px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+$breakpoint-xxxl: 1920px;
+
+/*mixins*/
+@mixin media($media) {
+   @if $media==xs {
+      @media only screen and (max-width: $breakpoint-xs) {
+         @content;
+      }
+   } @else if $media==sm {
+      @media (min-width: $breakpoint-sm) and (max-width: 767.9px) {
+         @content;
+      }
+   } @else if $media==md {
+      @media (min-width: $breakpoint-md) and (max-width: 991.9px) {
+         @content;
+      }
+   } @else if $media==lg {
+      @media (min-width: $breakpoint-lg) and (max-width: 1199.9px) {
+         @content;
+      }
+   } @else if $media==xl {
+      @media (min-width: $breakpoint-xl) and (max-width: 1399.9px) {
+         @content;
+      }
+   } @else if $media==xxl {
+      @media (min-width: $breakpoint-xxl) and (max-width: 1919.9px) {
+         @content;
+      }
+   } @else if $media==xxxl {
+      @media (min-width: $breakpoint-xxxl) {
+         @content;
+      }
+   }
+}
+
+/* implementacion de estilos */
+
+body {
+   font-family: $Roboto;
+   color: #4b4b4b;
+   overflow-x: hidden;
+   background-image: url("../img/jpg/fondo.jpg");
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+#main {
+   height: auto;
+}
+
+.logo {
+   width: 80%;
+
+   @include media(xs) {
+      width: 75%;
+   }
+   @include media(xxl) {
+      width: 80%;
+   }
+}
+
+.navbar-brand {
+   width: 10vw;
+   @include media(xs) {
+      width: 17rem;
+   }
+
+   @include media(xxl) {
+      width: 15vw;
+   }
+}
+
+.nav-item {
+   width: 100vw;
+
+   .nav-link {
+      font-family: $Roboto;
+      font-weight: bold;
+      color: $kuler-White !important;
+      font-size: 14px !important;
+      &:hover {
+         background-color: #fdb712;
+         border-radius: 5px;
+      }
+   }
+   .active {
+      background-color: #fdb712;
+      border-radius: 5px;
+   }
+
+   @include media(xxl) {
+      width: 65vw;
+      justify-content: space-around;
+   }
+   @include media(xxxl) {
+      width: 60vw;
+      justify-content: space-around;
+   }
+
+   @include media(xs) {
+      width: auto;
+      .nav-link {
+         font-family: $Roboto;
+         font-weight: normal;
+         color: $Kuler-Black !important;
+         font-size: 14px !important;
+         &:hover {
+            background-color: #fdb712;
+            border-radius: 5px;
+         }
+      }
+      .active {
+         background-color: #fdb712;
+         border-radius: 5px;
+      }
+   }
+}
+
+.navbar-expand-lg .navbar-collapse {
+   justify-content: end;
+}
+
+.bg-navbar {
+   background-color: $bdb_7 !important;
+   padding: 1rem 0;
+}
+
+.icoMenu {
+   color: $kuler-White;
+}
+
+.offcanvas-end {
+   width: auto;
+}
+
+.dropdown-menu {
+   margin-top: 4vh !important;
+   width: 16rem;
+
+   @include media(xs) {
+      margin-top: 0vh !important;
+      width: auto;
+      border: none !important;
+   }
+}
+
+.dropdown-item {
+   &:hover,
+   &:active {
+      background-color: transparent !important;
+      font-weight: bold;
+   }
+   @include media(xs) {
+      margin-top: 0vh !important;
+      font-size: 0.8rem;
+   }
+}
+
+.list-group-item {
+   @include media(xs) {
+      border-width: 0px !important;
+      padding: 0 !important;
+   }
+}
+
+.spacing {
+   height: 5vh;
+}
+
+.ico_legales_1 {
+   position: fixed;
+   top: 20rem;
+
+   @include media(xxl) {
+      top: 30rem;
+   }
+
+   img {
+      width: 30%;
+   }
+}
+
+.ico_legales_2 {
+   position: fixed;
+   top: 20rem;
+   right: 1rem;
+
+   @include media(xxl) {
+      top: 30rem;
+   }
+
+   img {
+      width: 70%;
+   }
+}
+
+#intro {
+   h2 {
+      font-family: $Roboto;
+      font-weight: bold;
+      color: #00c8aa;
+   }
+   h5 {
+      font-family: $Roboto;
+      color: $kuler-White;
+   }
+}
+
+#simulador {
+   @include media(xs) {
+      padding: 0 2rem;
+   }
+
+   .form-group {
+      height: 15vh;
+
+      @include media(xs) {
+         height: auto;
+      }
+   }
+   .title {
+      font-family: $Roboto;
+      color: #00c8aa;
+   }
+
+   label {
+      font-family: $Roboto;
+      font-size: $p;
+      color: $kuler-White;
+   }
+
+   .subtitle {
+      font-size: $pm;
+   }
+
+   #msg-1 {
+      display: none;
+      font-family: $Roboto;
+      font-size: $p;
+   }
+   #msg-2 {
+      display: none;
+      font-family: $Roboto;
+      font-size: $p;
+   }
+   #msg-3 {
+      display: none;
+      font-family: $Roboto;
+      font-size: $p;
+   }
+
+   .btn-primary {
+      border-radius: 30px;
+      background-color: #fdb712;
+      border-color: #fdb712;
+      color: $bdb_7;
+      font-weight: bold;
+   }
+
+   .modal-dialog {
+      max-width: 30vw;
+      @include media(xs) {
+         max-width: 95vw;
+      }
+   }
+
+   .table > :not(caption) > * > * {
+      border-bottom-width: 0px;
+   }
+
+   .table tr {
+      @include media(xs) {
+         display: grid;
+      }
+   }
+}
+
+#footer {
+   #bkg-col-footer-blue {
+      background-color: $bdb_1;
+      height: 13vh;
+
+      p {
+         font-size: 0.9rem;
+         color: $kuler-White;
+      }
+   }
+
+   #bkg-col-footer-gray {
+      background-color: #ececec;
+      height: 13vh;
+
+      .logoFooter {
+         width: 80%;
+      }
+
+      @include media(xs) {
+         height: 6vh;
+
+         .logoFooter {
+            width: 100%;
+         }
+      }
+   }
+
+   #redes {
+      background-color: #b1b1b1;
+
+      .fab {
+         color: $Kuler-Black;
+         font-size: 1.5rem !important;
+      }
+   }
+}
+
+.Notavisible {
+   display: block !important;
+}
+.Notaoculta {
+   display: none !important;
+}

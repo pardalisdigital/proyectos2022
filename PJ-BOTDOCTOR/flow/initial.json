@@ -1,0 +1,39 @@
+[
+    {
+        "keywords":  [
+            "hola",
+            "hola!",
+            "ola",
+            "ole",
+            "inicio",
+            "welcome",
+            "buenos días",
+            "buenas tardes",
+            "buenas noches",
+            "me dieron este número",
+            "necesito saber"
+        ],
+        "key": "STEP_1"
+    },
+    {
+        "keywords":  [
+            "Antiguo"
+        ],
+        "key": "STEP_2"
+    },
+    {
+        "keywords":  [
+            "Opción 1",
+            "Opción 2",
+            "Opción 3"
+        ],
+        "key": "STEP_2_1"
+    },
+    {
+        "keywords":  [
+            "Nuevo"
+        ],
+        "key": "STEP_3"
+    }
+
+]
