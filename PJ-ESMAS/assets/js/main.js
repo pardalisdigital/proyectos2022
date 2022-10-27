@@ -1,40 +1,56 @@
-const anElement = new AutoNumeric('#valor', {
-   currencySymbol: ' $',
-   decimalCharacter: ',',
-   digitGroupSeparator: '.',
+const anElement = new AutoNumeric("#valor", {
+   currencySymbol: " $",
+   decimalCharacter: ",",
+   digitGroupSeparator: ".",
    decimalPlaces: 0,
 });
 
+$(function () {
+   // obtener campos ocultar div
+   var checkbox = $("#checkCuota");
+   var hidden = $("#wrapperCuota");
+   //var populate = $("#populate");
 
+   hidden.hide();
+   checkbox.change(function () {
+      if (checkbox.is(":checked")) {
+         //hidden.show();
+         $("#wrapperCuota").fadeIn("200");
+      } else {
+         //hidden.hide();
+         $("#wrapperCuota").fadeOut("200");
+         $("#periodoCuota, #valorCuota #tipoCuota").val(""); // limpia los valores de lols input al ser ocultado
+         $("input[type=checkbox]").prop("checked", false); // limpia los valores de checkbox al ser ocultado
+      }
+   });
+});
 
 function obtenerdatos() {
    let valor = anElement.getNumericString();
-   let year = document.getElementById('year').value;
-   let periodo = document.getElementById('periodo').value;
-   let llenarTabla = document.querySelector('#lista_tabla tbody');
+   let year = document.getElementById("year").value;
+   let periodo = document.getElementById("periodo").value;
+   let llenarTabla = document.querySelector("#lista_tabla tbody");
 
    /* Variables */
-   let rentabilidad = 0.0440;
+   let rentabilidad = 0.044;
    let rentabilidad_final;
    let ncuotas;
    let mes = year * 12;
-
 
    while (llenarTabla.firstChild) {
       llenarTabla.removeChild(llenarTabla.firstChild);
    }
 
-
    /* Calculo del interes */
    function fnc_rentabilidad() {
       if (periodo == "Mensual") {
-         rentabilidad_final = (((rentabilidad + 1) ** (1 / 12)) - 1);
+         rentabilidad_final = (rentabilidad + 1) ** (1 / 12) - 1;
       } else if (periodo == "Bimensual") {
-         rentabilidad_final = (((rentabilidad + 1) ** (1 / 6)) - 1);
+         rentabilidad_final = (rentabilidad + 1) ** (1 / 6) - 1;
       } else if (periodo == "Trimestral") {
-         rentabilidad_final = (((rentabilidad + 1) ** (1 / 4)) - 1);
+         rentabilidad_final = (rentabilidad + 1) ** (1 / 4) - 1;
       } else if (periodo == "Semestral") {
-         rentabilidad_final = (((rentabilidad + 1) ** (1 / 2)) - 1);
+         rentabilidad_final = (rentabilidad + 1) ** (1 / 2) - 1;
       } else if (periodo == "Anual") {
          rentabilidad_final = rentabilidad;
       }
@@ -42,7 +58,6 @@ function obtenerdatos() {
    fnc_rentabilidad();
 
    console.log(rentabilidad_final);
-
 
    function fnc_numerocuotas() {
       if (periodo == "Mensual") {
@@ -68,43 +83,37 @@ function obtenerdatos() {
    console.log(va);
 
    /* Calculo de la formulación */
-   let calculo = ((va * rentabilidad_final) / (1 - (1 + rentabilidad_final) ** (-ncuotas)));
+   let calculo = (va * rentabilidad_final) / (1 - (1 + rentabilidad_final) ** -ncuotas);
 
    let calculoFinal = calculo.toFixed(0);
 
    console.log(calculo);
 
-   document.registro.valorTotal.value = '$' + new Intl.NumberFormat().format(valor);
-   document.registro.valorAporte.value = '$' + new Intl.NumberFormat().format(calculoFinal);
+   document.registro.valorTotal.value = "$" + new Intl.NumberFormat().format(valor);
+   document.registro.valorAporte.value = "$" + new Intl.NumberFormat().format(calculoFinal);
    document.registro.tiempo.value = year;
    document.registro.Periodo.value = periodo;
    document.registro.rentabilidad.value = (rentabilidad * 100).toFixed(2).replace(/\./g, ",");
 
-
    let fechas = [];
    let fechaActual = Date.now();
    let mes_actual = moment(fechaActual);
-   mes_actual.add(1, 'month');
-
-
+   mes_actual.add(1, "month");
 
    let tableSaldo = calculo;
    let tableInteres = 0;
 
-
    console.log(tableInteres);
 
    for (let i = 1; i <= mes; i++) {
-
-
-      tableSaldo = (tableSaldo + calculo + tableInteres);
+      tableSaldo = tableSaldo + calculo + tableInteres;
       tableInteres = parseFloat(tableSaldo * rentabilidad_final);
-      tableTotal = (calculo + tableInteres);
+      tableTotal = calculo + tableInteres;
 
       /* formato fecha */
 
-      fechas[i] = mes_actual.format('DD-MM-YYYY');
-      mes_actual.add(1, 'month');
+      fechas[i] = mes_actual.format("DD-MM-YYYY");
+      mes_actual.add(1, "month");
 
       /*       if (periodo == "Mensual") {
                mes_actual.add(1, 'month');
@@ -118,19 +127,15 @@ function obtenerdatos() {
                mes_actual.add(12, 'month');
             } */
 
-      const row = document.createElement('tr');
+      const row = document.createElement("tr");
       row.innerHTML = `
             <td>${fechas[i]}</td>
-            <td ALIGN="right">${'$' + new Intl.NumberFormat().format(tableSaldo.toFixed(0))}</td>
-            <td ALIGN="right">${'$' + new Intl.NumberFormat().format(calculoFinal)}</td>
-            <td ALIGN="right">${'$' + new Intl.NumberFormat().format(tableInteres.toFixed(0))}</td>
-            <td ALIGN="right">${'$' + new Intl.NumberFormat().format(tableTotal.toFixed(0))}</td>
+            <td ALIGN="right">${"$" + new Intl.NumberFormat().format(tableSaldo.toFixed(0))}</td>
+            <td ALIGN="right">${"$" + new Intl.NumberFormat().format(calculoFinal)}</td>
+            <td ALIGN="right">${"$" + new Intl.NumberFormat().format(tableInteres.toFixed(0))}</td>
+            <td ALIGN="right">${"$" + new Intl.NumberFormat().format(tableTotal.toFixed(0))}</td>
 
         `;
-      llenarTabla.appendChild(row)
-
+      llenarTabla.appendChild(row);
    }
-
-
-
 }

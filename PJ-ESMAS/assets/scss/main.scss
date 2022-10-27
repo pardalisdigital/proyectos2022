@@ -8,13 +8,12 @@ $bdb_5: #a1a1a6;
 $bdb_6: #4b4b4b;
 $bdb_7: #fafafa;
 
-
 /* Color Theme Swatches in Hex */
 $GrayScale-1: #222222;
 $GrayScale-2: #656565;
-$GrayScale-3: #ABABAB;
-$GrayScale-4: #EAEAEA;
-$GrayScale-5: #F5F5F5;
+$GrayScale-3: #ababab;
+$GrayScale-4: #eaeaea;
+$GrayScale-5: #f5f5f5;
 
 /* Color negativo y positivo */
 $kuler-White: #ffffff;
@@ -22,19 +21,17 @@ $Kuler-Black: #000000;
 
 /* font size */
 $px: 12;
-$h1: unquote((48/ $px)+'rem');
-$h2: unquote((36/ $px)+'rem');
-$h3: unquote((24/ $px)+'rem');
-$h4: unquote((18/ $px)+'rem');
-$h5: unquote((16/ $px)+'rem');
-$h6: unquote((14/ $px)+'rem');
-$p: unquote((12/ $px)+'rem');
-$pm: unquote((10/ $px)+'rem');
-$ps: unquote((9/ $px)+'rem');
+$h1: unquote((48 / $px)+"rem");
+$h2: unquote((36 / $px)+"rem");
+$h3: unquote((24 / $px)+"rem");
+$h4: unquote((18 / $px)+"rem");
+$h5: unquote((16 / $px)+"rem");
+$h6: unquote((14 / $px)+"rem");
+$p: unquote((12 / $px)+"rem");
+$pm: unquote((10 / $px)+"rem");
+$ps: unquote((9 / $px)+"rem");
 
-
-$Roboto: 'Roboto',
-sans-serif;
+$Roboto: "Roboto", sans-serif;
 
 /*variables*/
 $breakpoint-xs: 575.98px;
@@ -46,423 +43,390 @@ $breakpoint-xxl: 1400px;
 
 /*mixins*/
 @mixin media($media) {
-
-     @if $media==xs {
-          @media only screen and (max-width: $breakpoint-xs) {
-               @content;
-          }
-     }
-
-     @else if $media==sm {
-          @media (min-width: $breakpoint-sm) and (max-width: 767.9px) {
-               @content;
-          }
-     }
-
-     @else if $media==md {
-          @media (min-width: $breakpoint-md) and (max-width: 991.9px) {
-               @content;
-          }
-     }
-
-     @else if $media==lg {
-          @media (min-width: $breakpoint-lg) and (max-width: 1199.9px) {
-               @content;
-          }
-     }
-
-     @else if $media==xl {
-          @media (min-width: $breakpoint-xl) and (max-width: 1399.9px) {
-               @content;
-          }
-     }
-
-     @else if $media==xxl {
-          @media (min-width: $breakpoint-xxl) {
-               @content;
-          }
-     }
+   @if $media==xs {
+      @media only screen and (max-width: $breakpoint-xs) {
+         @content;
+      }
+   } @else if $media==sm {
+      @media (min-width: $breakpoint-sm) and (max-width: 767.9px) {
+         @content;
+      }
+   } @else if $media==md {
+      @media (min-width: $breakpoint-md) and (max-width: 991.9px) {
+         @content;
+      }
+   } @else if $media==lg {
+      @media (min-width: $breakpoint-lg) and (max-width: 1199.9px) {
+         @content;
+      }
+   } @else if $media==xl {
+      @media (min-width: $breakpoint-xl) and (max-width: 1399.9px) {
+         @content;
+      }
+   } @else if $media==xxl {
+      @media (min-width: $breakpoint-xxl) {
+         @content;
+      }
+   }
 }
 
 /* implementacion de estilos */
 
 body {
-     font-family: $Roboto;
-     color: #4B4B4B;
-     overflow-x: hidden;
-
+   font-family: $Roboto;
+   color: #4b4b4b;
+   overflow-x: hidden;
 }
 
 .logo {
-     width: 70%;
+   width: 70%;
 
-     @include media(xs) {
-          width: 60%;
-     }
+   @include media(xs) {
+      width: 60%;
+   }
 }
 
 .navbar-brand {
-     @include media(xs) {
-          width: 17rem;
-     }
+   @include media(xs) {
+      width: 17rem;
+   }
 }
 
 .nav-item {
-     width: 12rem;
+   width: 12rem;
 
-     .nav-link {
-          font-family: $Roboto;
-          font-weight: bold;
-          color: $bdb_1 !important;
-          font-size: $h6 !important;
-     }
+   .nav-link {
+      font-family: $Roboto;
+      font-weight: bold;
+      color: $bdb_1 !important;
+      font-size: $h6 !important;
+   }
 }
 
 .navbar-expand-lg .navbar-collapse {
-     justify-content: end;
+   justify-content: end;
 }
 
 .bg-navbar {
-     background-color: $kuler-White !important;
-     border-bottom: solid 4px $bdb_1;
+   background-color: $kuler-White !important;
+   border-bottom: solid 4px $bdb_1;
 }
 
 .spacing {
-     height: 5vh;
+   height: 5vh;
 }
 
-
-
 .ico_legales_1 {
-     position: fixed;
-     top: 20rem;
+   position: fixed;
+   top: 20rem;
 
-     @include media(xxl) {
-          top: 30rem;
-     }
+   @include media(xxl) {
+      top: 30rem;
+   }
 
-     img {
-          width: 80%;
-     }
+   img {
+      width: 80%;
+   }
 }
 
 .ico_legales_2 {
-     position: fixed;
-     top: 20rem;
-     right: 1rem;
+   position: fixed;
+   top: 20rem;
+   right: 1rem;
 
-     @include media(xxl) {
-          top: 30rem;
-     }
+   @include media(xxl) {
+      top: 30rem;
+   }
 
-     img {
-          width: 80%;
-     }
+   img {
+      width: 80%;
+   }
 }
 
-
-
-
 #beneficios {
-     .title_section {
-          font-weight: bold;
-          color: $bdb_1;
-          font-size: $h2;
+   .title_section {
+      font-weight: bold;
+      color: $bdb_1;
+      font-size: $h2;
 
-          @include media (lg) {
-               font-size: $h3;
-          }
-     }
+      @include media(lg) {
+         font-size: $h3;
+      }
+   }
 
-     .subtitle {
-          font-size: $h6;
+   .subtitle {
+      font-size: $h6;
 
-          @include media (lg) {
-               font-size: 0.9rem;
-          }
-     }
+      @include media(lg) {
+         font-size: 0.9rem;
+      }
+   }
 
-     .moneda {
-          font-size: $h6;
-          font-weight: bold;
-          color: $bdb_1;
-          text-align: center;
+   .moneda {
+      font-size: $h6;
+      font-weight: bold;
+      color: $bdb_1;
+      text-align: center;
 
-          @include media (lg) {
-               font-size: 1rem;
-          }
+      @include media(lg) {
+         font-size: 1rem;
+      }
+   }
 
-     }
+   .ico_es_mas {
+      width: 10%;
+      margin-bottom: 0.1rem;
+   }
 
-     .ico_es_mas {
-          width: 10%;
-          margin-bottom: 0.1rem;
-     }
+   .btn-primary {
+      font-family: $Roboto;
+      font-weight: bold;
+      color: #fff;
+      background-color: $bdb_1;
+      border-color: $bdb_1;
+      padding: 1.2rem 0.5rem;
+      border-radius: 5rem;
 
-     .btn-primary {
-          font-family: $Roboto;
-          font-weight: bold;
-          color: #fff;
-          background-color: $bdb_1;
-          border-color: $bdb_1;
-          padding: 1.2rem 0.5rem;
-          border-radius: 5rem;
+      &:hover {
+         background-color: $bdb_3;
+         border-color: $bdb_3;
+      }
+   }
 
-          &:hover {
-               background-color: $bdb_3;
-               border-color: $bdb_3;
-          }
-     }
+   .btn-block {
+      width: 100%;
+   }
 
-     .btn-block {
-          width: 100%;
-     }
+   .spacing_btn_beneficios {
+      margin: 0 7rem;
 
-     .spacing_btn_beneficios {
-          margin: 0 7rem;
+      @include media(xs) {
+         margin: 0 3rem;
+      }
 
-          @include media(xs) {
-               margin: 0 3rem;
-          }
+      @include media(xxl) {
+         margin: 0 20rem;
+      }
+   }
 
-          @include media(xxl) {
-               margin: 0 20rem;
-          }
-     }
+   .ico_beneficios {
+      width: 40%;
+   }
 
-     .ico_beneficios {
-          width: 40%;
-     }
-
-     .ico_beneficios_2 {
-          width: 30%;
-     }
-
+   .ico_beneficios_2 {
+      width: 30%;
+   }
 }
 
 #solcitaes {
-     .title_section {
-          font-weight: bold;
-          color: $bdb_1;
-          font-size: 2rem;
+   .title_section {
+      font-weight: bold;
+      color: $bdb_1;
+      font-size: 2rem;
 
-          span {
-               color: #FA5915;
-          }
-     }
+      span {
+         color: #fa5915;
+      }
+   }
 
-     .icoesmas {
-          width: 8%;
-          margin-bottom: 0.5rem;
-     }
+   .icoesmas {
+      width: 8%;
+      margin-bottom: 0.5rem;
+   }
 
-     .title_icos {
-          font-weight: 600;
-          color: $bdb_1;
-     }
+   .title_icos {
+      font-weight: 600;
+      color: $bdb_1;
+   }
 
-     .ico {
-          width: 25%;
-     }
+   .ico {
+      width: 25%;
+   }
 
-     #bkg_card {
-          background: url(../img/png/Trama_1.png) no-repeat;
-          background-size: contain;
-          background-position: 5rem 0rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-     }
-
+   #bkg_card {
+      background: url(../img/png/Trama_1.png) no-repeat;
+      background-size: contain;
+      background-position: 5rem 0rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+   }
 }
 
 #simulador {
+   height: 80vh;
+   background: url(../img/jpg/bkg_simulador.jpg) no-repeat;
+   background-size: cover;
+   background-position: top center;
 
-     height: 80vh;
-     background: url(../img/jpg/bkg_simulador.jpg) no-repeat;
-     background-size: cover;
-     background-position: top center;
+   @include media(xs) {
+      background: $bdb_1 !important;
+      padding: 0 2rem;
+   }
 
+   .title_form {
+      color: $kuler-White;
+      font-weight: bold;
+      font-size: 2rem;
+   }
 
-     @include media(xs) {
-          background: $bdb_1 !important;
-          padding: 0 2rem;
-     }
+   .subtitle_form {
+      color: $kuler-White;
+      font-size: 1.2rem;
+   }
 
-     .title_form {
-          color: $kuler-White;
-          font-weight: bold;
-          font-size: 2rem;
-     }
+   .btn-primary {
+      font-family: $Roboto;
+      font-weight: bold;
+      color: #fff;
+      background-color: $bdb_3;
+      border-color: $bdb_3;
+      border-radius: 5rem;
+      padding: 1rem 0.5rem;
 
-     .subtitle_form {
-          color: $kuler-White;
-          font-size: 1.2rem;
-     }
+      &:hover {
+         background-color: $bdb_3;
+         border-color: $bdb_3;
+      }
+   }
 
+   .btn-block {
+      width: 100%;
+   }
 
-     .btn-primary {
-          font-family: $Roboto;
-          font-weight: bold;
-          color: #fff;
-          background-color: $bdb_3;
-          border-color: $bdb_3;
-          border-radius: 5rem;
-          padding: 1rem 0.5rem;
+   .form-label {
+      color: $kuler-White;
+      font-size: $pm;
+   }
 
-          &:hover {
+   .form-control,
+   .form-select {
+      color: #a1a1a6;
+      border-radius: 20px;
+   }
+
+   .nota {
+      margin-top: 1rem;
+
+      @include media(xxl) {
+         margin-top: 3rem;
+      }
+
+      .text-nota {
+         font-size: 0.6rem;
+      }
+   }
+
+   #SimuladorModal {
+      .modal-header {
+         background-color: $bdb_1;
+
+         h5 {
+            font-family: $Roboto;
+            font-weight: bold;
+            color: $kuler-White;
+         }
+
+         .material-icons {
+            font-family: 1.5rem;
+            color: $kuler-White;
+         }
+      }
+
+      .modal-body {
+         .table {
+            tr {
+               border-style: hidden !important;
+            }
+         }
+      }
+
+      .modal-footer {
+         .btn-primary {
+            font-family: $Roboto;
+            font-weight: bold;
+            color: #fff;
+            background-color: $bdb_1;
+            border-color: $bdb_1;
+            border-radius: 5rem;
+            padding: 1rem 1rem;
+            width: 13rem;
+
+            &:hover {
+               background-color: $bdb_1;
+               border-color: $bdb_1;
+            }
+         }
+
+         .btn-secondary {
+            font-family: $Roboto;
+            font-weight: bold;
+            color: #fff;
+            background-color: $bdb_3;
+            border-color: $bdb_3;
+            border-radius: 5rem;
+            padding: 1rem 1rem;
+            width: 13rem;
+
+            &:hover {
                background-color: $bdb_3;
                border-color: $bdb_3;
-          }
-     }
-
-     .btn-block {
-          width: 100%;
-     }
-
-     .form-label {
-          color: $kuler-White;
-          font-size: $pm;
-     }
-
-     .form-control,
-     .form-select {
-          color: #A1A1A6;
-          border-radius: 20px;
-     }
-
-     .nota {
-          margin-top: 1rem;
-
-          @include media(xxl) {
-               margin-top: 3rem;
-          }
-
-          .text-nota {
-               font-size: 0.6rem;
-          }
-     }
-
-     #SimuladorModal {
-
-          .modal-header {
-               background-color: $bdb_1;
-
-               h5 {
-                    font-family: $Roboto;
-                    font-weight: bold;
-                    color: $kuler-White;
-               }
-
-               .material-icons {
-                    font-family: 1.5rem;
-                    color: $kuler-White;
-               }
-          }
-
-          .modal-body {
-               .table {
-                    tr {
-                         border-style: hidden !important;
-                    }
-               }
-          }
-
-          .modal-footer {
-
-               .btn-primary {
-                    font-family: $Roboto;
-                    font-weight: bold;
-                    color: #fff;
-                    background-color: $bdb_1;
-                    border-color: $bdb_1;
-                    border-radius: 5rem;
-                    padding: 1rem 1rem;
-                    width: 13rem;
-
-                    &:hover {
-                         background-color: $bdb_1;
-                         border-color: $bdb_1;
-                    }
-               }
-
-               .btn-secondary {
-                    font-family: $Roboto;
-                    font-weight: bold;
-                    color: #fff;
-                    background-color: $bdb_3;
-                    border-color: $bdb_3;
-                    border-radius: 5rem;
-                    padding: 1rem 1rem;
-                    width: 13rem;
-
-                    &:hover {
-                         background-color: $bdb_3;
-                         border-color: $bdb_3;
-                    }
-               }
-          }
-     }
-
-
+            }
+         }
+      }
+   }
 }
 
 #aportes {
-     a {
+   a {
+      background: url(../img/png/Bkg_pago.png) no-repeat center center;
+      background-size: contain;
+      height: 40vh;
+      border-radius: 20px;
+      width: 50vw;
 
-          background: url(../img/png/Bkg_pago.png) no-repeat center center;
-          background-size: contain;
-          height: 40vh;
-          border-radius: 20px;
-          width: 50vw;
+      @include media(md) {
+         background: url(../img/png/Bkg_pago.png) no-repeat center center;
+         background-size: contain;
+         height: 40vh;
+         border-radius: 20px;
+         width: 85vw;
+      }
 
-          @include media(md) {
-               background: url(../img/png/Bkg_pago.png) no-repeat center center;
-               background-size: contain;
-               height: 40vh;
-               border-radius: 20px;
-               width: 85vw;
-          }
-
-          @include media(xs) {
-               background: url(../img/png/Bkg_pago_movil.png) no-repeat center center;
-               background-size: contain;
-               height: 50vh;
-               border-radius: 20px;
-               width: 85vw;
-               justify-content: center;
-          }
-
-     }
+      @include media(xs) {
+         background: url(../img/png/Bkg_pago_movil.png) no-repeat center center;
+         background-size: contain;
+         height: 50vh;
+         border-radius: 20px;
+         width: 85vw;
+         justify-content: center;
+      }
+   }
 }
 
-
-
 #aclaratoria {
-     p {
-          font-size: $ps;
-     }
+   p {
+      font-size: $ps;
+   }
 }
 
 #footer {
+   #bkg-col-footer-blue {
+      background-color: $bdb_1;
+      height: 13vh;
 
-     #bkg-col-footer-blue {
-          background-color: $bdb_1;
-          height: 13vh;
+      p {
+         font-size: $ps;
+         color: $kuler-White;
+      }
+   }
 
-          p {
-               font-size: $ps;
-               color: $kuler-White;
-          }
-
-     }
-
-     #bkg-col-footer-gray {
-          background: url(../img/svg/Cluster_logos_footer.svg) no-repeat;
-          background-size: contain;
-          background-color: #ECECEC;
-          height: 13vh;
-          /*    #logos {
+   #bkg-col-footer-gray {
+      background: url(../img/svg/Cluster_logos_footer.svg) no-repeat;
+      background-size: contain;
+      background-color: #ececec;
+      height: 13vh;
+      /*    #logos {
 
                .img_icos1 {
                     margin: 0 auto;
@@ -540,66 +504,58 @@ body {
 
                }
           } */
+   }
 
-     }
+   #redes {
+      background-color: #b1b1b1;
 
-
-
-
-
-     #redes {
-          background-color: #B1B1B1;
-
-          .fab {
-               color: $Kuler-Black;
-               font-size: 1.5rem !important;
-          }
-
-     }
-
-
+      .fab {
+         color: $Kuler-Black;
+         font-size: 1.5rem !important;
+      }
+   }
 }
 
 .line {
-     margin: 0 7rem;
+   margin: 0 7rem;
 }
 
 .tableSimulacion {
-     display: none;
+   display: none;
 
-     .btn-primary {
-          font-family: $Roboto;
-          font-weight: bold;
-          color: #fff;
-          background-color: $bdb_1;
-          border-color: $bdb_1;
-          border-radius: 5rem;
-          padding: 1rem 1rem;
-          width: 13rem;
+   .btn-primary {
+      font-family: $Roboto;
+      font-weight: bold;
+      color: #fff;
+      background-color: $bdb_1;
+      border-color: $bdb_1;
+      border-radius: 5rem;
+      padding: 1rem 1rem;
+      width: 13rem;
 
-          &:hover {
-               background-color: $bdb_1;
-               border-color: $bdb_1;
-          }
-     }
+      &:hover {
+         background-color: $bdb_1;
+         border-color: $bdb_1;
+      }
+   }
 
-     .btn-secondary {
-          font-family: $Roboto;
-          font-weight: bold;
-          color: #fff;
-          background-color: $bdb_3;
-          border-color: $bdb_3;
-          border-radius: 5rem;
-          padding: 1rem 1rem;
-          width: 13rem;
+   .btn-secondary {
+      font-family: $Roboto;
+      font-weight: bold;
+      color: #fff;
+      background-color: $bdb_3;
+      border-color: $bdb_3;
+      border-radius: 5rem;
+      padding: 1rem 1rem;
+      width: 13rem;
 
-          &:hover {
-               background-color: $bdb_3;
-               border-color: $bdb_3;
-          }
-     }
+      &:hover {
+         background-color: $bdb_3;
+         border-color: $bdb_3;
+      }
+   }
 }
 
 #main {
-     display: block;
+   display: block;
 }

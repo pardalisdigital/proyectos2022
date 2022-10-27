@@ -425,9 +425,48 @@
                                  </select>
                               </div>
                               <div class="mt-3">
-                                 <label for="periodo" class="form-label"
-                                    >¿Quieres realizar una cuota extraordinaria?</label
-                                 >
+                                 <div class="custom-control custom-checkbox">
+                                    <input
+                                       type="checkbox"
+                                       class="custom-control-input"
+                                       id="checkCuota"
+                                    />
+                                    <label class="custom-control-label" for="customCheck1"
+                                       >¿Quieres realizar una cuota extraordinaria?</label
+                                    >
+                                 </div>
+                              </div>
+                              <div id="wrapperCuota" style="display: none">
+                                 <div class="mt-3">
+                                    <label for="periodo" class="form-label">Tiempo</label>
+                                    <select
+                                       class="form-select"
+                                       name="periodoCuota"
+                                       id="periodoCuota"
+                                    >
+                                       <option value="Mensual">Mensual</option>
+                                       <option value="Bimensual">Bimensual</option>
+                                       <option value="Trimestral">Trimestral</option>
+                                       <option value="Semestral">Semestral</option>
+                                       <option value="Anual">Anual</option>
+                                    </select>
+                                 </div>
+                                 <div class="mt-3">
+                                    <label for="valor" class="form-label">Valor</label>
+                                    <input
+                                       type="text"
+                                       class="form-control"
+                                       name="valorCuota"
+                                       id="valorCuota"
+                                    />
+                                 </div>
+                                 <div class="mt-3">
+                                    <label for="periodo" class="form-label">Tipo de cuota</label>
+                                    <select class="form-select" name="tipoCuota" id="tipoCuota">
+                                       <option value="RTiempo">Reducción tiempo</option>
+                                       <option value="RCuota">Reducción Cuota</option>
+                                    </select>
+                                 </div>
                               </div>
 
                               <div class="mt-4">
